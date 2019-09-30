@@ -32,6 +32,10 @@ class BlogsController < ApplicationController
     end
   end
 
+  def confirm
+    @blog = Blog.new(blog_params)
+  end
+
   def destroy
     @blog.destroy
     redirect_to blogs_path, notice: "投稿を削除しました"
