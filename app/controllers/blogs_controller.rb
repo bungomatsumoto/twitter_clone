@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :get_id_blog, only: [:show, :edit, :update]
+
   def index
     @blogs = Blog.all
   end
@@ -17,14 +19,12 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
   end
 
   def edit
   end
 
   def update
-    @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "投稿内容を編集しました"
     else
@@ -39,7 +39,7 @@ class BlogsController < ApplicationController
   end
 
   def get_id_blog
-    @blog = Blog.find(params[:id])    
+    @blog = Blog.find(params[:id])
   end
 
 end
