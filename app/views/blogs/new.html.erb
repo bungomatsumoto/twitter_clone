@@ -1,14 +1,3 @@
-<%= form_with(model: @blog, local: true) do |form| %>
-  <% if @blog.errors.any? %>
-    <div class="error_explanation">
-      <% @blog.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-      <% end %>
-    </div>
-  <% end %>
-  <div class="blog_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<h2>新規に投稿する</h2>
+
+<%= render "form" %>
