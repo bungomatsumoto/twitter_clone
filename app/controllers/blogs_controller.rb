@@ -8,8 +8,16 @@ class BlogsController < ApplicationController
   end
 
   def create
-    Blog.create(blog_params)
-    redirect_to new_blog_path
+    @blog = Blog.create(blog_params)
+    if @blog.save
+      redirect_to new_blog_path, notice: "投稿が完了しました"
+    else
+      render "new"
+    end
+  end
+
+  def show
+    @blog = Blog.find(params[:id])
   end
 
   private
