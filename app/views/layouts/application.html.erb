@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ttwwapp</title>
+    <title>MONOLOGUEEE</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <header>
+        <div class="header_container">
+           <h1 id="header_title"><%= image_tag 'owlbird.png', class:'monologueee_icon' %>MONOLOGUEEE</h1>
+        </div>
+      </header>
+      <main>
+        <div class="main_container">
+          <%= yield %>
+        </div>
+      </main>
+      <footer>
+        <div class="footer_container">
+          <p><small>(C)2019 MONOLOGUEEE. All Rights Reserved.</small></p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

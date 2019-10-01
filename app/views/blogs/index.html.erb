@@ -1,20 +1,24 @@
-<h1>投稿一覧</h1>
+<h2>投稿一覧</h2>
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
+<div class="table_wrapper">
+  <table class="table_container">
+    <tr>
+      <th class="content_header">内容</th>
+      <th class="content_header">詳細</th>
+      <th class="content_header">更新</th>
+      <th class="content_header">削除</th>
+    </tr>
 
-<% @blogs.each do |blog| %>
-  <tr>
-    <td><%= blog.content %></td>
-    <td><%= link_to "詳細を確認する", blog_path(blog.id) %></td>
-    <td><%= link_to "投稿内容を編集する", edit_blog_path(blog.id) %></td>
-    <td><%= link_to "投稿を削除する", blog_path(blog.id), method: :delete, data: { confirm: "本当に削除しますか？"} %></td>
-  </tr>
-<% end %>
-</table>
-
-<%= link_to '新しく投稿する', new_blog_path %>
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td class="post_content"><%= blog.content %></td>
+      <td class="option_order"><%= link_to "投稿を表示", blog_path(blog.id) %></td>
+      <td class="option_order"><%= link_to "投稿を編集する", edit_blog_path(blog.id) %></td>
+      <td class="option_order"><%= link_to "投稿を削除する", blog_path(blog.id), method: :delete, data: { confirm: "本当に削除しますか？"} %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<p class="to_other_page"><%= link_to '新しく投稿する', new_blog_path, class:'to_other_page_txt' %></p>

@@ -7,10 +7,12 @@
     </div>
   <% end %>
   <div class="blog_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.label :content %><br>
+    <%= form.text_area :content, size: "80x6" %>
   </div>
-  <%= form.submit %>
+  <div class="button_place">
+    <span class="submit_buttton"><%= form.submit %></span>
+  </div>
 <% end %>
 
-<%= link_to '一覧画面に戻る', blogs_path %>
+<p class="to_other_page"><%= link_to '一覧画面に戻る', blogs_path %></p>

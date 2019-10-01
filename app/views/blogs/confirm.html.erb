@@ -1,9 +1,12 @@
-<h3>以下の内容で投稿する</h3>
+<h2>以下の内容で投稿する</h2>
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
 
-  <p>本文: <%= @blog.content %></p>
-  <%= form.submit "投稿する" %>
-  <%= form.submit "戻る", name: "back" %>
+  <p>本文</p>
+  <p><%= @blog.content %></p>
+  <div class="button_place">
+    <span class="submit_buttton"><%= form.submit "投稿する" %></span>
+    <span class="submit_buttton"><%= form.submit "戻る", name: "back" %></span>
+  </div>
 <% end %>
